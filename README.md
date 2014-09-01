@@ -1,4 +1,4 @@
-absolute-time
+Absolute Time
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
@@ -16,18 +16,36 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 
 ## Usage
 
-To use the module,
+Validates whether an input string is an absolute date; e.g., `2014/07/18-9:34:42`. An absolute date is formatted according to the following rules:
+
+*	`year`, `month`, and `day` are separated by `/`: `year/month/day`
+* 	calendar values are separated from temporal values by either a space or `-`: `year/month/day-00:00:00` or `year/month/day 00:00:00`
+*	if specified, hour and minutes must be specified together: `00:00`
+*	seconds are optional
+
 
 ``` javascript
-var lib = require( 'validate.io-absolute-time' );
+var validate = require( 'validate.io-absolute-time' );
+
+validate( '2014/07/14' );
+// Returns true
+
+validate( '2014/07/14 9:23' );
+// Returns true
+
+validate( '2014/07/18-9:34:42' );
+// Returns true
+
+validate( '2014-07-14 9:34:42' );
+// Returns false
 ```
+
+## Notes
+
+This method returns `false` for any `value` which is not a `string`.
 
 
 ## Examples
-
-``` javascript
-var lib = require( 'validate.io-absolute-time' );
-```
 
 To run the example code from the top-level application directory,
 
