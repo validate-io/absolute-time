@@ -27,16 +27,16 @@ Validates whether an input string is an absolute date; e.g., `2014/07/18-9:34:42
 ``` javascript
 var validate = require( 'validate.io-absolute-time' );
 
-validate( '2014/07/14' );
+console.log( validate( '2014/07/14' ) );
 // Returns true
 
-validate( '2014/07/14 9:23' );
+console.log( validate( '2014/07/14 9:23' ) );
 // Returns true
 
-validate( '2014/07/18-9:34:42' );
+console.log( validate( '2014/07/18-9:34:42' ) );
 // Returns true
 
-validate( '2014-07-14 9:34:42' );
+console.log( validate( '2014-07-14 9:34:42' ) );
 // Returns false
 ```
 
