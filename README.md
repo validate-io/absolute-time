@@ -16,6 +16,12 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 
 ## Usage
 
+``` javascript
+var isAbsoluteTime = require( 'validate.io-absolute-time' );
+```
+
+#### isAbsoluteTime( value )
+
 Validates whether an input string is an absolute date; e.g., `2014/07/18-9:34:42`. An absolute date is formatted according to the following rules:
 
 *	`year`, `month`, and `day` are separated by `/`: `year/month/day`
@@ -25,27 +31,31 @@ Validates whether an input string is an absolute date; e.g., `2014/07/18-9:34:42
 
 
 ``` javascript
-var validate = require( 'validate.io-absolute-time' );
+var value = '2014/01/01 0:00:01';
 
-console.log( validate( '2014/07/14' ) );
-// Returns true
-
-console.log( validate( '2014/07/14 9:23' ) );
-// Returns true
-
-console.log( validate( '2014/07/18-9:34:42' ) );
-// Returns true
-
-console.log( validate( '2014-07-14 9:34:42' ) );
-// Returns false
+var bool = isAbsoluteTime( value );
+// returns true
 ```
 
-## Notes
 
-This method returns `false` for any `value` which is not a `string`.
+__Note__: the method returns `false` for any `value` which is not a `string`.
 
 
 ## Examples
+
+``` javascript
+console.log( isAbsoluteTime( '2014/07/14' ) );
+// returns true
+
+console.log( isAbsoluteTime( '2014/07/14 9:23' ) );
+// returns true
+
+console.log( isAbsoluteTime( '2014/07/18-9:34:42' ) );
+// returns true
+
+console.log( isAbsoluteTime( '2014-07-14 9:34:42' ) );
+// returns false
+```
 
 To run the example code from the top-level application directory,
 
@@ -78,16 +88,16 @@ $ make test-cov
 Istanbul creates a `./reports/coverage` directory. To access an HTML version of the report,
 
 ``` bash
-$ open reports/coverage/lcov-report/index.html
+$ make view-cov
 ```
 
 
+---
 ## License
 
 [MIT license](http://opensource.org/licenses/MIT). 
 
 
----
 ## Copyright
 
 Copyright &copy; 2014. Athan Reines.
