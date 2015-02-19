@@ -22,7 +22,7 @@ var isAbsoluteTime = require( 'validate.io-absolute-time' );
 
 #### isAbsoluteTime( value )
 
-Validates whether an input string is an absolute date; e.g., `2014/07/18-9:34:42`. An absolute date is formatted according to the following rules:
+Validates whether an input `string` is an absolute date; e.g., `2014/07/18-9:34:42`. An absolute date is formatted according to the following rules:
 
 *	`year`, `month`, and `day` are separated by `/`: `year/month/day`
 * 	calendar values are separated from temporal values by either a space or `-`: `year/month/day-00:00:00` or `year/month/day 00:00:00`
