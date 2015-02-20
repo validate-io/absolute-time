@@ -1,6 +1,6 @@
 {
   "name": "validate.io-absolute-time",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Validates if a value is formatted as absolute time.",
   "author": {
     "name": "Athan Reines",
