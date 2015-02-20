@@ -50,6 +50,7 @@ describe( 'validate.io-absolute-time', function tests() {
 		assert.ok( validate( '2014/08/02-09:34' ) );
 		assert.ok( validate( '2014/08/02 09:34:54' ) );
 		assert.ok( validate( '2014/08/02-09:34:54' ) );
+		assert.ok( validate( new String( '2014/08/02-09:34:54' ) ) );
 	});
 
 });
