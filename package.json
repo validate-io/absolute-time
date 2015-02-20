@@ -28,7 +28,9 @@
     "validation",
     "validator",
     "absolute",
-    "time"
+    "time",
+    "is",
+    "isabsolutetime"
   ],
   "bugs": {
     "url": "https://github.com/validate-io/absolute-time/issues"
